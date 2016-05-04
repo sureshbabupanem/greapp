@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>design</title>
+
+    <style>
+        body {
+            margin: 60px 0px 100px 0px;
+        }
+
+
+        .image {
+            position: relative;
+            width: 6%;
+            left: 89%;
+            top: -29px;
+        }
+
+
+        .textbox {
+            position: relative;
+            width: 90%;
+            margin-left: 2%;
+            border-radius: 0.6em;
+            padding: 8px 10px;
+        }
+
+        .fixedheader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: #CCC;
+            background-color: #0f7f4f;
+        }
+
+        .fixedfooter {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0f7f4f;
+        }
+
+        .menu {
+            width: 50%;
+            float: left;
+        }
+
+        .footer1 {
+            color: black;
+        }
+
+        .footer {
+            width: 100%;
+            float: left;
+            clear: both;
+            background-color: whitesmoke;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(128, 128, 128);
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-family: Calibri;
+                font-size: 12pt;
+            }
+
+                li a:hover:not(.active) {
+                }
+
+        .active {
+            background-color: whitesmoke;
+            color: #0f7f4f;
+        }
+
+        .active1 {
+            color: #0f7f4f;
+            font-weight: bold;
+        }
+
+        .category {
+            font-family: Arial;
+            margin-left: 2%;
+            margin-right: 3%;
+        }
+
+        .align1 {
+            float: left;
+            width: 8%;
+            margin-top: 1%;
+            margin-left: 1%;
+        }
+
+        .align2 {
+            margin-top: 3%;
+            float: left;
+            margin-left: 3%;
+            width: 75%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="fixedheader">
+        <br />
+        <form>
+            <input class="textbox" type="text" placeholder="Search Category" required>
+            <input class="image" type="image" id="searchsubmit" name="submit" value="search" src="images/Search.png" />
+        </form>
+    </div>
+    <br />
+    <br />
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/cloth.png" />
+
+            <div class="align2"><span style="color:black">Clothing, Shoes and Assessories</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/Compact.png" />
+
+            <div class="align2"><span style="color:black">Cameras</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/Monitor.png" />
+
+            <div class="align2"><span style="color:black">Computers</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/Children.png" />
+
+            <div class="align2"><span style="color:black">Children</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/Dancing.png" />
+
+            <div class="align2"><span style="color:black">Entertainment</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/Shop.png" />
+
+            <div class="align2"><span style="color:black">Grocery</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/TV.png" />
+
+            <div class="align2"><span style="color:black">Telivision</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/phone.png" />
+
+            <div class="align2"><span style="color:black">Phones</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/Restaurant.png" />
+
+            <div class="align2"><span style="color:black">Restaurants</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/Running.png" />
+
+            <div class="align2"><span style="color:black">Sporting Goods</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/field.png" />
+
+            <div class="align2"><span style="color:black">Seasonal</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+    <div class="category">
+
+        <a href="#">
+            <img class="align1" src="images/travel.png" />
+
+            <div class="align2"><span style="color:black">Travels</span></div>
+        </a>
+        <a href="#"><img style="width:5%; margin-top:2.8%; margin-left:4%" src="images/Forward.png" /></a>
+
+    </div>
+    <div style="width:92%; margin-left:3%">
+        <hr />
+    </div>
+
+
+    <div class="fixedfooter">
+        <ul class="footer">
+            <li>
+                <a class="footer1" href="index.html"><img style="width:50%" src="images/Tag-50.png" /><br />Deals</a>
+            </li>
+            <li><a class="footer1" href="coupon.html"><img style="width:40%" src="images/Starred Ticket-48.png" /><br />Coupons</a></li>
+            <li><a class="active1" href="category.html"><img style="width:35%" src="images/Category-49.png" /><br />Categories<br /></a></li>
+            <li><a class="footer1" href="more.html"><img style="width:50%" src="images/More-49.png" /><br />More</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

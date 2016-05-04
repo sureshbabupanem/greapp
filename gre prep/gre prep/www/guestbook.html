@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: red;
+        }
+
+        .body1 {
+            background-color: white;
+            height: 100%;
+        }
+
+        .fixedheader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8%;
+            background-color: dodgerblue;
+            align-content: stretch;
+        }
+
+        .title {
+            font-family: 'Copperplate Gothic';
+            font-size: small;
+            text-align: left;
+            color: floralwhite;
+        }
+
+        .rcorners1 {
+            border-radius: 25px;
+            background-color: white;
+            top: 25%;
+            padding: 20px;
+            width: 50px;
+            height: 35px;
+        }
+
+        .footer1 {
+            color: black;
+        }
+
+        .footer {
+            width: 100%;
+            float: left;
+            clear: both;
+            background-color: crimson;
+        }
+
+
+
+        .headings {
+            font-family: 'Script MT' sans-serif;
+            font-size: medium;
+            text-align: center;
+            color: midnightblue;
+        }
+
+        .readings {
+            font-family: 'Arial Rounded MT';
+            color: midnightblue;
+        }
+
+        .subhead {
+            text-align: center;
+            color: indigo;
+        }
+
+        .data2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: midnightblue;
+            font-size: 10pt;
+            text-align: center;
+        }
+    </style>
+
+
+
+    <title></title>
+    <script>
+        document.addEventListener("DOMContentLoaded", getGuestbookAll);
+
+        function getGuestbookAll()
+        {
+            alert("in guestbook");
+            var oreq = new XMLHttpRequest();
+            oreq.onreadystatechange = function () {
+                if (oreq.readyState == 4) {
+                    var table = JSON.parse(oreq.responseText);
+                    for (var i = 0; i < table.length; i++) {
+                        var record = table[i];
+                      //  dvGuestAll.innerHTML +=
+                    //     record.guestid + "," + record.guestname + ","
+                    //     + record.guestcomment + "," + record.guestdate;
+                    //     dvGuestAll.innerHTML += "<br />";
+                        dvGuestAll.innerHTML += "<b style='color:blue'>" + "<b>Guest No : </b>" + "</b>"+ record.guestid  ;
+                        dvGuestAll.innerHTML += "<b style='color:darkgreen'>" + "<b> &nbsp </b>" + "<b> &nbsp </b>" + "<b>  Name :&nbsp  </b>" + "</b>" + record.guestname + "<br />";
+                        dvGuestAll.innerHTML += "<b style='color:#8e44ad'> Age :&nbsp </b>" + record.guestage + "<br />";
+                        dvGuestAll.innerHTML += "<b style='color:#c0392b'> Comments :&nbsp </b>" + "\"" + record.guestcomment + "\"<br />";
+                        dvGuestAll.innerHTML += "<b style='color:#1abc9c'> Date :&nbsp </b>" + record.guestdate + "<br />";
+                    }
+
+                }
+            }
+            oreq.open("GET", "http://uniqueskillmaster.com/guestbook.svc/guest/all", true);
+            oreq.send();
+
+        }
+
+
+    </script>
+</head>
+<body class="body1">
+    <div class="body1">
+        <div class="fixedheader">
+            <h1 class="title"><a href="index.html"><img style="width:10%;" src="images/Home-96.png" /></a>   </h1>
+        </div>
+        <div>
+            <br />
+            <br />
+            <a href="#"><img style="width:100%; " src="images/SetAndReachGoals.jpg" /></a>
+        </div>
+        <h3 class="subhead"> Guests who visited the app </h3>
+        <h1></h1>
+        <div id="dvGuestAll"></div>
+
+
+        <div class="fixedfooter">
+            <h2 class="data2"> Shortcuts</h2>
+            <table style="width:100%;">
+                <tr>
+                    <th><a class="footer1" href="insertguest.html"><img style="width:70%" height="60" src="images/Guest Male-100 (1).png" /><br /></a>  </th>
+                    <th><a class="footer1" href="enternotify.html"><img style="width:70%" height="60" src="images/Guest Male-100 (2).png" /><br /> </a></th>
+                    <th><a class="footer1" href="enterbug.html"><img style="width:70%" height="60" src="images/Spam-100 (1).png" /><br /></a></th>
+                </tr>
+            </table>
+            <table style="width:100%;">
+                <tr>
+                    <th><a class="footer1" href="guestbook.html"><img style="width:70%" height="60" src="images/Myspace-100.png" /><br /></a>  </th>
+                    <th><a class="footer1" href="notifyme.html"><img style="width:70%" height="60" src="images/Guest-100 (1).png" /><br /> </a></th>
+                    <th><a class="footer1" href="bugreport.html"><img style="width:70%" height="60" src="images/Spam-100.png" /><br /></a></th>
+                </tr>
+            </table>
+            <table style="width:100%;">
+                <tr>
+                    <th><a class="footer1" href="index.html"><img style="width:65%" height="50" src="images/gre1.jfif" /><br /></a>  </th>
+                    <th><a class="footer1" href="feedback.html"><img style="width:135%" height="60" src="images/Comments-96.png" /><br /> </a></th>
+                    <th><a class="footer1" href="index.html"><img style="width:65%" height="40" src="images/gmat1.jfif" /><br /></a></th>
+                </tr>
+            </table>
+        </div>
+        <div class="fixedfooter">   </div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+    </div>
+</body>
+</html>

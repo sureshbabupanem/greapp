@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+    body {
+        background-color: red;
+    }
+
+    .body1 {
+        background-color: white;
+        height: 100%;
+    }
+
+    .fixedheader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8%;
+        background-color: dodgerblue;
+        align-content: stretch;
+    }
+
+    .title {
+        font-family: 'Copperplate Gothic';
+        font-size: small;
+        text-align: left;
+        color: floralwhite;
+    }
+
+    .rcorners1 {
+        border-radius: 25px;
+        background-color: white;
+        top: 25%;
+        padding: 20px;
+        width: 50px;
+        height: 35px;
+    }
+
+    .footer1 {
+        color: black;
+    }
+
+    .footer {
+        width: 100%;
+        float: left;
+        clear: both;
+        background-color: crimson;
+    }
+
+
+
+    .headings {
+        font-family: 'Script MT' sans-serif;
+        font-size: medium;
+        text-align: center;
+        color: midnightblue;
+    }
+
+    .readings {
+        font-family: 'Arial Rounded MT';
+        color: midnightblue;
+    }
+
+    .subhead {
+        text-align: center;
+        color: indigo;
+    }
+
+    .data2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: midnightblue;
+        font-size: 10pt;
+        text-align: center;
+    }
+</style>
+
+<head>
+    <title></title>
+    <script>
+        document.addEventListener("DOMContentLoaded", getNotifyAll);
+        function getQS(key)
+        {
+            var qs = "", kva = [], kvi = [];
+            qs = location.search.substring(1);
+            kva = qs.split("&");
+            for (i = 0; i < kva.length; i++)
+            {
+                kvi = kva[i].split("=");
+                if (kvi[0] == key)
+                    return kvi[1];
+            } return (null);
+        }
+        function getNotifyAll() {
+            // alert(getQS("id"));
+            var selectedID = getQS("id");
+            var oreq = new XMLHttpRequest();
+            oreq.onreadystatechange = function () {
+                if (oreq.readyState == 4) {
+                    var table = JSON.parse(oreq.responseText);
+                    txNameUpdate.value = table[0].username;
+                    txSkillUpdate.value = table[0].userskill;
+                    txMailUpdate.value = table[0].useremail;
+                    txAgeUpdate.value = table[0].userage;
+
+                    txclassUpdate.value = table[0].userexam;
+                    txgenderUpdate.value = table[0].usergender;
+                    txdobUpdate.value = table[0].userdob;
+                    txtermUpdate.value = table[0].userterm;
+                    txmobileUpdate.value = table[0].usermobile;
+                    txstudyUpdate.value = table[0].userstudy;
+
+                    txGuestCommentUpdate.value = table[0].usercomment;
+
+                }
+            }
+            oreq.open("GET", "http://uniqueskillmaster.com/notifyme.svc/notifyme/" + selectedID, true);
+            oreq.send();
+        }
+        function doUpdate() {
+             alert("You have just Updated Your Profile Click Ok To View");
+
+
+            var postdata = "username=" + encodeURIComponent(txNameUpdate.value) + "&"
+                            + "userskill=" + encodeURIComponent(txSkillUpdate.value) + "&"
+                            + "useremail=" + encodeURIComponent(txMailUpdate.value) + "&"
+                            + "userage=" + encodeURIComponent(txAgeUpdate.value) + "&"
+
+                            + "userexam=" + encodeURIComponent(txclassUpdate.value) + "&"
+                            + "usergender=" + encodeURIComponent(txgenderUpdate.value) + "&"
+                            + "userdob=" + encodeURIComponent(txdobUpdate.value) + "&"
+                            + "userterm=" + encodeURIComponent(txtermUpdate.value) + "&"
+                            + "usermobile=" + encodeURIComponent(txmobileUpdate.value) + "&"
+                            + "userstudy=" + encodeURIComponent(txstudyUpdate.value) + "&"
+
+                            + "usercomment=" + encodeURIComponent(txGuestCommentUpdate.value);
+
+            var selectedID = getQS("id");
+            var oreq = new XMLHttpRequest();
+            oreq.onreadystatechange = function () {
+                if (oreq.readyState == 4) {
+                    
+                    var table = JSON.parse(oreq.responseText);
+                   
+                    location.href = "updatethanku.html";
+                }
+            }
+            oreq.open("POST", "http://uniqueskillmaster.com/notifyme.svc/notifyme/" + selectedID, true);
+            oreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            oreq.send(postdata);
+        }
+    </script>
+</head>
+<body class="body1">
+    <div class="body1">
+        <div class="fixedheader">
+            <h1 class="title"><a href="index.html"><img style="width:10%;" src="images/Home-96.png" /></a>   </h1>
+        </div>
+        <div>
+            <br />
+            <br />
+            <a href="#"><img style="width:100%; " src="images/SetAndReachGoals.jpg" /></a>
+        </div>
+        <h3 class="subhead"> Notifications Update  </h3>
+
+
+        <table>
+            <tr>
+                <td><p class="box1"><label for="txNameUpdate">Name:</label> </p> </td>
+                <td><input type="text" placeholder="Enter Updated Name" id="txNameUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txAgeUpdate">Age:</label> </p> </td>
+                <td><input type="text" placeholder="Enter only Updated Age" id="txAgeUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txSkillUpdate" >Skills:</label> </p> </td>
+                <td><input type="text" placeholder="Enter Updated Interested Skills" id="txSkillUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txMailUpdate" >Mail:</label> </p> </td>
+                <td><input type="text" placeholder="Enter Updated Email" id="txMailUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txclassUpdate" placeholder="Classroom or Online">Class Preference:</label> </p> </td>
+                <td><input type="text" placeholder="Classroom or Online " id="txclassUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txgenderUpdate" placeholder="Gender">Gender:</label> </p> </td>
+                <td><input type="text" placeholder="Gender" id="txgenderUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txdobUpdate" placeholder="Date of Birth">Date of Birth:</label> </p> </td>
+                <td><input type="text" placeholder="Date of Birth" id="txdobUpdate"><br></td>
+            </tr>
+
+            <tr>
+                <td><p class="box1"><label for="txtermUpdate" placeholder="Spring- Summer- Fall">Term Applying for:</label> </p> </td>
+                <td><input type="text" placeholder="Spring- Summer- Fall" id="txtermUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txmobileUpdate" placeholder="Enter Your Mobile Number">Mobile(For ALerts):</label> </p> </td>
+                <td><input type="text" placeholder="Enter Your Mobile Number" id="txmobileUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txstudyUpdate" placeholder="CS-EE-Management">Major Field of Study:</label> </p> </td>
+                <td><input type="text" placeholder="CS-EE-Management" id="txstudyUpdate"><br></td>
+            </tr>
+            <tr>
+                <td><p class="box1"><label for="txGuestCommentUpdate">Comments:</label> </p> </td>
+                <td><textarea rows="4" cols="30" placeholder="Enter Your Updated Comments" id="txGuestCommentUpdate"></textarea> <br></td>
+
+            </tr>
+        </table>
+        <div>
+                        <input type="button" value="Update" onclick="doUpdate()"><br />
+            <h4>Not a Registered User?  <a href="register.html"> <i>  Register Now  </i></a></h4>
+        </div>
+
+        <div class="fixedfooter">
+            <h2 class="data2"> Shortcuts</h2>
+            <table>
+                <tr>
+                    <th><a class="footer1" href="index.html"><img style="width:65%" height="50" src="images/gre1.jfif" /><br /></a>  </th>
+                    <th><a class="footer1" href="enterbug.html"><img style="width:135%" height="60" src="images/Comments-96.png" /><br /> </a></th>
+                    <th><a class="footer1" href="index.html"><img style="width:65%" height="40" src="images/gmat1.jfif" /><br /></a></th>
+                </tr>
+            </table>
+        </div>
+        <div class="fixedfooter">   </div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+    </div>
+</body>
+</html>
